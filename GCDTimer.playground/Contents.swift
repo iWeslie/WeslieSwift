@@ -126,6 +126,39 @@ class RepeatingTimer {
 }
 
 /*:
+ ### PerformSelector
+ 
+ > Simple way to call a selector method after delay.
+ 
+ * Callout(Feature):
+ The same as Timer.
+ 
+ - Important:
+ afterDelay will not work in the subThread as there is no run loop in it by default
+ 
+ */
+
+NSObject.perform(<#T##aSelector: Selector##Selector#>, with: <#T##Any?#>, afterDelay: <#T##TimeInterval#>)
+
+
+/*:
+ ### CADisplayLink
+ 
+ > A timer object that allows your application to synchronize its drawing to the refresh rate of the display.
+ 
+ * Callout(Feature):
+ Once the display link is associated with a run loop, the selector on the target is called when the screen’s contents need to be updated.\
+ You can control a display link's frame rate.
+ 
+ 
+ */
+
+let displayLink = CADisplayLink(target: <#T##Any#>, selector: <#T##Selector#>)
+displayLink.add(to: .current, forMode: .defaultRunLoopMode)
+
+
+
+/*:
  ### Runloop
  ### Timer
  ### PerformSelector
