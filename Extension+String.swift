@@ -1,5 +1,5 @@
 /*:
- * ConstantValue.swift
+ * Extension+String.swift
  * Created by Weslie
  * Copyright © 2018 Weslie. All rights reserved.
  */
@@ -15,9 +15,7 @@ extension String {
                 return false
             }
         }
-        set {
-            
-        }
+        set { }
     }
     
     /// Return a bool value wheather the phone number is valid or not
