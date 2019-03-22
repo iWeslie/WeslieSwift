@@ -1,7 +1,7 @@
 /*:
  * Extension+String.swift
  * Created by Weslie
- * Copyright © 2018 Weslie. All rights reserved.
+ * Copyright © 2019 Weslie. All rights reserved.
  */
 
 extension String {
@@ -19,7 +19,7 @@ extension String {
     }
     
     /// Return a bool value wheather the phone number is valid or not
-    var isValidePhoneNumber: Bool {
+    var isValidPhoneNumber: Bool {
         get {
             let mobileRE: String = "^((13[0-9])|(147)|(15[0-3,5-9])|(16[0,0-9])|(18[0,0-9])|(17[0-3,5-9]))\\d{8}$"
             let regex = NSPredicate(format: "SELF MATCHES %@", mobileRE)

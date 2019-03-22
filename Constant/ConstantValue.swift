@@ -1,7 +1,7 @@
 /*:
  * ConstantValue.swift
  * Created by Weslie
- * Copyright © 2018 Weslie. All rights reserved.
+ * Copyright © 2019 Weslie. All rights reserved.
  */
 
 import UIKit

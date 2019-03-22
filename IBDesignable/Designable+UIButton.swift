@@ -1,14 +1,14 @@
 /*:
  * Designable+UIView.swift
  * Created by Weslie
- * Copyright © 2018 Weslie. All rights reserved.
+ * Copyright © 2019 Weslie. All rights reserved.
  */
 
 import UIKit
 
 @IBDesignable
-/// A class for designable UIView in storyboard
-open class ShadowView: UIView {
+/// A class for designable UIBUtton in storyboard
+open class ShadowButton: UIButton {
     public override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = UIColor.white
@@ -64,6 +64,30 @@ open class ShadowView: UIView {
     public var borderWidth: CGFloat = 0 {
         didSet {
             layer.borderWidth = self.borderWidth
+        }
+    }
+    
+    public func reverseSelected() {
+        
+    }
+    public func setSelected() {
+        
+    }
+}
+
+extension UIButton {
+    
+    private struct AssociateKeys {
+        static var customProperty = "customProperty"
+    }
+    
+    @IBInspectable
+    public var identifier: String {
+        set(value) {
+            objc_setAssociatedObject(self, &AssociateKeys.customProperty, value, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
+        }
+        get {
+            return objc_getAssociatedObject(self, &AssociateKeys.customProperty) as! String
         }
     }
 }
