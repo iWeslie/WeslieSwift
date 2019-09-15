@@ -8,7 +8,7 @@ import UIKit
 
 extension UIView {
     
-    /// return the current view controller of the view
+    /// - returns: the current view controller of the view
     var viewController: UIViewController? {
         get {
             for view in sequence(first: self.superview, next: { $0?.superview }) {

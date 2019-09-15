@@ -5,8 +5,17 @@
  */
 
 extension String {
-
-    /// Return a bool value if the string only contains spaces or empty
+    
+    /// Replace char in string at specific index
+    @discardableResult
+    func replace(at index: Int, for newChar: Character) -> String {
+        var chars = Array(self)
+        chars[index] = newChar
+        let modifiedString = String(chars)
+        return modifiedString
+    }
+    
+    /// Judge if the string is empty
     var isEmptyString: Bool {
         get {
             if self.replacingOccurrences(of: " ", with: "") == "" || self == "" {
@@ -18,7 +27,7 @@ extension String {
         set { }
     }
     
-    /// Return a bool value wheather the phone number is valid or not
+    /// Judge wheather the phone number is valid or not
     var isValidPhoneNumber: Bool {
         get {
             let mobileRE: String = "^((13[0-9])|(147)|(15[0-3,5-9])|(16[0,0-9])|(18[0,0-9])|(17[0-3,5-9]))\\d{8}$"
@@ -33,7 +42,7 @@ extension String {
         set { }
     }
     
-    /// Return a bool value wheather the ID card number is valid or not
+    /// Judge wheather the id card number is valid or not
     var isValidIDNumber: Bool {
         get {
             let mobileRE: String = "(^[0-9]{15}$)|([0-9]{17}([0-9]|X)$)"
@@ -48,7 +57,7 @@ extension String {
         set { }
     }
     
-    /// Return a bool value wheather the e-mail is valid or not
+    /// Judge wheather the email is valid or not
     var isValidEmail: Bool {
         get {
             let mobileRE: String = "^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$"
@@ -63,7 +72,7 @@ extension String {
         set { }
     }
     
-    /// Return a bool value if the password is valid
+    /// Judge wheather the password is valid or not
     var isValidPassword: Bool {
         get {
             let pwdRE: String = "^((?!\\d+$)(?![a-zA-Z]+$)[a-zA-Z\\d@#$%^&_+].{5,19})+$"
